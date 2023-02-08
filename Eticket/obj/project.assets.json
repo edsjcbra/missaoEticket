@@ -108,6 +108,19 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.dll": {}
+        }
+      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -116,6 +129,19 @@
         },
         "runtime": {
           "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Infra.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infra.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infra.Repository.dll": {}
         }
       }
     }
@@ -462,15 +488,27 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
+    "Application/1.0.0": {
+      "type": "project",
+      "path": "../Application/Application.csproj",
+      "msbuildProject": "../Application/Application.csproj"
+    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Infra.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Infra.Repository/Infra.Repository.csproj",
+      "msbuildProject": "../Infra.Repository/Infra.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Application >= 1.0.0",
       "Domain >= 1.0.0",
+      "Infra.Repository >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.1",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
@@ -502,8 +540,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Apps\\EletronicTicket\\Application\\Application.csproj": {
+              "projectPath": "C:\\Apps\\EletronicTicket\\Application\\Application.csproj"
+            },
             "C:\\Apps\\EletronicTicket\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Apps\\EletronicTicket\\Domain\\Domain.csproj"
+            },
+            "C:\\Apps\\EletronicTicket\\Infra.Repository\\Infra.Repository.csproj": {
+              "projectPath": "C:\\Apps\\EletronicTicket\\Infra.Repository\\Infra.Repository.csproj"
             }
           }
         }

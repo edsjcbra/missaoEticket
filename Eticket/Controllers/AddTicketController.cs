@@ -1,4 +1,4 @@
-﻿using Domain.Contracts.UserCase.AddTicket;
+﻿using Domain.Contracts.UseCases.AddTicket;
 using Domain.Entities;
 using Eticket.Models;
 using Microsoft.AspNetCore.Http;
@@ -10,8 +10,8 @@ namespace Eticket.Controllers
     [ApiController]
     public class AddTicketController : ControllerBase
     {
-        private readonly IAddTicketUserCase _addTicketUserCase;
-        public AddTicketController(IAddTicketUserCase addTicketUserCase)
+        private readonly IAddTicketUseCase _addTicketUserCase;
+        public AddTicketController(IAddTicketUseCase addTicketUserCase)
         {
             _addTicketUserCase = addTicketUserCase;
         }
