@@ -1,0 +1,15 @@
+C:\Apps\EletronicTicket\Application\bin\Debug\net7.0\Application.deps.json
+C:\Apps\EletronicTicket\Application\bin\Debug\net7.0\Application.dll
+C:\Apps\EletronicTicket\Application\bin\Debug\net7.0\Application.pdb
+C:\Apps\EletronicTicket\Application\bin\Debug\net7.0\Domain.dll
+C:\Apps\EletronicTicket\Application\bin\Debug\net7.0\Domain.pdb
+C:\Apps\EletronicTicket\Application\obj\Debug\net7.0\Application.csproj.AssemblyReference.cache
+C:\Apps\EletronicTicket\Application\obj\Debug\net7.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Apps\EletronicTicket\Application\obj\Debug\net7.0\Application.AssemblyInfoInputs.cache
+C:\Apps\EletronicTicket\Application\obj\Debug\net7.0\Application.AssemblyInfo.cs
+C:\Apps\EletronicTicket\Application\obj\Debug\net7.0\Application.csproj.CoreCompileInputs.cache
+C:\Apps\EletronicTicket\Application\obj\Debug\net7.0\Application.csproj.CopyComplete
+C:\Apps\EletronicTicket\Application\obj\Debug\net7.0\Application.dll
+C:\Apps\EletronicTicket\Application\obj\Debug\net7.0\refint\Application.dll
+C:\Apps\EletronicTicket\Application\obj\Debug\net7.0\Application.pdb
+C:\Apps\EletronicTicket\Application\obj\Debug\net7.0\ref\Application.dll

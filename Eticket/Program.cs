@@ -2,6 +2,8 @@
 using Application.UseCases.AddTicket;
 using Domain.Contracts.Repositories.AddTicket;
 using Domain.Contracts.UseCases.AddTicket;
+using Eticket.Models;
+using FluentValidation;
 using Infra.Repository.Repositories.AddTicket;
 
 namespace Eticket
@@ -15,6 +17,7 @@ namespace Eticket
             // Add services to the container.
             builder.Services.AddSingleton<IAddTicketRepository, AddTicketRepository>(); 
             builder.Services.AddScoped<IAddTicketUseCase, AddTicketUseCase>();
+            builder.Services.AddTransient<IValidator<AddTicketInput>, AddTicketInputValidator>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
