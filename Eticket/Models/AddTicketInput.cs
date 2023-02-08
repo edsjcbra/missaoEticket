@@ -1,6 +1,6 @@
 ﻿namespace Eticket.Models
 {
-    public class AddTicket
+    public class AddTicketInput
     {
         public string Origin { get; set; }
         public string Destination { get; set; }
