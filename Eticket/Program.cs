@@ -1,4 +1,5 @@
 
+using Application.UseCases.AddTicket;
 using Domain.Contracts.Repositories.AddTicket;
 using Domain.Contracts.UseCases.AddTicket;
 using Infra.Repository.Repositories.AddTicket;
