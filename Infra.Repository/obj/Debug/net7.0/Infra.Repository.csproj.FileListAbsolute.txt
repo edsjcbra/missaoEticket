@@ -13,3 +13,5 @@ C:\Apps\EletronicTicket\Infra.Repository\obj\Debug\net7.0\Infra.Repository.dll
 C:\Apps\EletronicTicket\Infra.Repository\obj\Debug\net7.0\refint\Infra.Repository.dll
 C:\Apps\EletronicTicket\Infra.Repository\obj\Debug\net7.0\Infra.Repository.pdb
 C:\Apps\EletronicTicket\Infra.Repository\obj\Debug\net7.0\ref\Infra.Repository.dll
+C:\Apps\EletronicTicket\Infra.Repository\bin\Debug\net7.0\Infra.Repository.runtimeconfig.json
+C:\Apps\EletronicTicket\Infra.Repository\obj\Debug\net7.0\Infra.Repository.genruntimeconfig.cache

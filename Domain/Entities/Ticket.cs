@@ -8,7 +8,7 @@ namespace Domain.Entities
 {
     public class Ticket
     {
-        public Ticket(string origin, string destination, double price, DateTime travelDate)
+        public Ticket(string origin, string destination, float price, DateTime travelDate)
         {
             Origin = origin;
             Destination = destination;
@@ -16,9 +16,10 @@ namespace Domain.Entities
             TravelDate = travelDate;
         }
 
+        public int Id { get; private set; }
         public string Origin { get; private set; }
         public string Destination { get; private set; }
-        public double Price { get; private set; }
+        public float Price { get; private set; }
         public DateTime TravelDate { get; private set; }
     }
 }

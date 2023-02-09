@@ -4,7 +4,7 @@ using Domain.Contracts.Repositories.AddTicket;
 using Domain.Contracts.UseCases.AddTicket;
 using Eticket.Models;
 using FluentValidation;
-using Infra.Repository.DbContext;
+using Infra.Repository.DbContexts;
 using Infra.Repository.Repositories.AddTicket;
 
 namespace Eticket
@@ -16,7 +16,7 @@ namespace Eticket
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddSingleton<IDbContext, DbContext>();
+            builder.Services.AddDbContext<EticketDbContext>();
             builder.Services.AddScoped<IAddTicketRepository, AddTicketRepository>(); 
             builder.Services.AddScoped<IAddTicketUseCase, AddTicketUseCase>();
             builder.Services.AddTransient<IValidator<AddTicketInput>, AddTicketInputValidator>();
