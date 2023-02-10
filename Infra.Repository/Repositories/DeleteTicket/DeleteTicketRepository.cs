@@ -1,5 +1,10 @@
-﻿using Domain.Contracts.Repositories.DeleteTicket;
+﻿using Azure.Core;
+using Domain.Contracts.Repositories.DeleteTicket;
+using Domain.Entities;
 using Infra.Repository.DbContexts;
+using Microsoft.EntityFrameworkCore;
+using System.Data.Common;
+using System.Net;
 
 namespace Infra.Repository.Repositories.DeleteTicket
 {
@@ -11,16 +16,19 @@ namespace Infra.Repository.Repositories.DeleteTicket
         {
             _dbContext = dbContext;
         }
-        public bool DeleteTicket(int id)
+        public void DeleteTicket(int id)
         {
             var ticketToDelete = _dbContext.Tickets.FirstOrDefault(t => t.Id == id);
 
-            if (ticketToDelete == null) throw new Exception("Cadastro nao encontrado no banco de dados");
-
-            _dbContext.Tickets.Remove(ticketToDelete);
-            _dbContext.SaveChanges();
-
-            return true;
+            if (ticketToDelete != null)
+            {
+                _dbContext.Tickets.Remove(ticketToDelete);
+                _dbContext.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("05X04 - Ticket nao encontrado na base de dados");
+            }
         }
     }
 }

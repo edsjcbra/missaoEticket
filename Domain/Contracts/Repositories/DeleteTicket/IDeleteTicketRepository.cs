@@ -1,7 +1,9 @@
-﻿namespace Domain.Contracts.Repositories.DeleteTicket
+﻿using Domain.Entities;
+
+namespace Domain.Contracts.Repositories.DeleteTicket
 {
     public interface IDeleteTicketRepository
     {
-        bool DeleteTicket(int id);
+        void DeleteTicket(int id);
     }
 }
