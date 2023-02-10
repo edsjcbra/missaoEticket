@@ -1,14 +1,18 @@
 
 using Application.UseCases.AddTicket;
-using Application.UseCases.GetTicketsUseCase;
+using Application.UseCases.DeleteTicket;
+using Application.UseCases.GetTickets;
 using Domain.Contracts.Repositories.AddTicket;
+using Domain.Contracts.Repositories.DeleteTicket;
 using Domain.Contracts.Repositories.GetTickets;
 using Domain.Contracts.UseCases.AddTicket;
+using Domain.Contracts.UseCases.DeleteTicket;
 using Domain.Contracts.UseCases.GetTickets;
 using Eticket.Models;
 using FluentValidation;
 using Infra.Repository.DbContexts;
 using Infra.Repository.Repositories.AddTicket;
+using Infra.Repository.Repositories.DeleteTicket;
 using Infra.Repository.Repositories.GetTickets;
 
 namespace Eticket
@@ -23,9 +27,11 @@ namespace Eticket
             builder.Services.AddDbContext<EticketDbContext>();
             builder.Services.AddScoped<IAddTicketRepository, AddTicketRepository>(); 
             builder.Services.AddScoped<IAddTicketUseCase, AddTicketUseCase>();
-            builder.Services.AddTransient<IValidator<AddTicketInput>, AddTicketInputValidator>();
             builder.Services.AddScoped<IGetTicketsRepository, GetTicketsRepository>();
             builder.Services.AddScoped<IGetTicketsUseCase, GetTicketsUseCase>();
+            builder.Services.AddScoped<IDeleteTicketRepository, DeleteTicketRepository>();
+            builder.Services.AddScoped<IDeleteTicketUseCase, DeleteTicketUseCase>();
+            builder.Services.AddTransient<IValidator<AddTicketInput>, AddTicketInputValidator>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

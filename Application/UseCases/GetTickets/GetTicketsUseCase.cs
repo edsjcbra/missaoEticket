@@ -1,13 +1,8 @@
 ﻿using Domain.Contracts.Repositories.GetTickets;
 using Domain.Contracts.UseCases.GetTickets;
 using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Application.UseCases.GetTicketsUseCase
+namespace Application.UseCases.GetTickets
 {
     public class GetTicketsUseCase : IGetTicketsUseCase
     {
