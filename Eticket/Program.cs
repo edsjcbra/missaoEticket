@@ -1,18 +1,22 @@
 
 using Application.UseCases.AddTicket;
 using Application.UseCases.DeleteTicket;
+using Application.UseCases.GetTicket;
 using Application.UseCases.GetTickets;
 using Domain.Contracts.Repositories.AddTicket;
 using Domain.Contracts.Repositories.DeleteTicket;
+using Domain.Contracts.Repositories.GetTicket;
 using Domain.Contracts.Repositories.GetTickets;
 using Domain.Contracts.UseCases.AddTicket;
 using Domain.Contracts.UseCases.DeleteTicket;
+using Domain.Contracts.UseCases.GetTicket;
 using Domain.Contracts.UseCases.GetTickets;
 using Eticket.Models;
 using FluentValidation;
 using Infra.Repository.DbContexts;
 using Infra.Repository.Repositories.AddTicket;
 using Infra.Repository.Repositories.DeleteTicket;
+using Infra.Repository.Repositories.GetTicket;
 using Infra.Repository.Repositories.GetTickets;
 
 namespace Eticket
@@ -31,6 +35,8 @@ namespace Eticket
             builder.Services.AddScoped<IGetTicketsUseCase, GetTicketsUseCase>();
             builder.Services.AddScoped<IDeleteTicketRepository, DeleteTicketRepository>();
             builder.Services.AddScoped<IDeleteTicketUseCase, DeleteTicketUseCase>();
+            builder.Services.AddScoped<IGetTicketByIdRepository, GetTicketByIdRepository>();
+            builder.Services.AddScoped<IGetTicketByIdUseCase, GetTicketByIdUseCase>();
             builder.Services.AddTransient<IValidator<AddTicketInput>, AddTicketInputValidator>();
 
             builder.Services.AddControllers();
