@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace Eticket.Models
 {
-    public class AddTicketInputValidator : AbstractValidator<AddTicketInput>
+    public class ChangeTicketInputValidator : AbstractValidator<Ticket>
     {
-        public AddTicketInputValidator()
+        public ChangeTicketInputValidator()
         {
             RuleFor(t => t.Origin).NotEmpty();
             RuleFor(t => t.Destination).NotEmpty();
@@ -13,4 +13,5 @@ namespace Eticket.Models
             RuleFor(t => t.TravelDate).NotEmpty();
         }
     }
+
 }

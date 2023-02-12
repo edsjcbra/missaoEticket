@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.Entities
+﻿namespace Domain.Entities
 {
     public class Ticket
     {
@@ -16,10 +10,10 @@ namespace Domain.Entities
             TravelDate = travelDate;
         }
 
-        public int Id { get; private set; }
-        public string Origin { get; private set; }
-        public string Destination { get; private set; }
-        public float Price { get; private set; }
-        public DateTime TravelDate { get; private set; }
+        public int Id { get; set; }
+        public string Origin { get; set; }
+        public string Destination { get; set; }
+        public float Price { get; set; }
+        public DateTime TravelDate { get; set; }
     }
 }

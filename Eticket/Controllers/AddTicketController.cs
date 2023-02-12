@@ -12,12 +12,12 @@ namespace Eticket.Controllers
     [ApiController]
     public class AddTicketController : ControllerBase
     {
-        private readonly IAddTicketUseCase _addTicketUserCase;
+        private readonly IAddTicketUseCase _addTicketUseCase;
         private readonly IValidator<AddTicketInput> _addTicketInputValidator;
 
         public AddTicketController(IAddTicketUseCase addTicketUserCase, IValidator<AddTicketInput> addTicketInputValidator)
         {
-            _addTicketUserCase = addTicketUserCase;
+            _addTicketUseCase = addTicketUserCase;
             _addTicketInputValidator = addTicketInputValidator;
         }
         [HttpPost]
@@ -33,7 +33,7 @@ namespace Eticket.Controllers
 
             var ticket = new Ticket(input.Origin, input.Destination, input.Price, input.TravelDate);
 
-            _addTicketUserCase.AddTicket(ticket);
+            _addTicketUseCase.AddTicket(ticket);
             return Created("", ticket);
         }
     }
