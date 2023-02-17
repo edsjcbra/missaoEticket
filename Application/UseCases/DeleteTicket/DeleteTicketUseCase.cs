@@ -12,10 +12,9 @@ namespace Application.UseCases.DeleteTicket
             _ideleteTicketRepository = ideleteTicketRepository;
         }
 
-        public bool DeleteTicket(int id)
+        public void DeleteTicket(int id)
         {
             _ideleteTicketRepository.DeleteTicket(id);
-            return true;
         }
     }
 }

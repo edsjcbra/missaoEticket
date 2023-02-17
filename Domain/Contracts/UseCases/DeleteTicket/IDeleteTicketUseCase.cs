@@ -2,6 +2,6 @@
 {
     public interface IDeleteTicketUseCase
     {
-        bool DeleteTicket(int id);
+        void DeleteTicket(int id);
     }
 }
