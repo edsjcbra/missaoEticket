@@ -1,5 +1,6 @@
 ﻿using Domain.Contracts.UseCases.ChangeTicket;
 using Domain.Entities;
+using Eticket.Models;
 using Eticket.Models.Error;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
@@ -11,26 +12,29 @@ namespace Eticket.Controllers
     public class ChangeTicketController : ControllerBase
     {
         private readonly IChangeTicketUseCase _changeTicketUseCase;
-        private readonly IValidator<Ticket> _changeTicketInputValidator;
+        private readonly IValidator<AddTicketInput> _addTicketInputValidator;
 
-        public ChangeTicketController(IChangeTicketUseCase changeTicketUserCase, IValidator<Ticket> changeTicketInputValidator)
+        public ChangeTicketController(IChangeTicketUseCase changeTicketUserCase, IValidator<AddTicketInput> addTicketInputValidator)
         {
             _changeTicketUseCase = changeTicketUserCase;
-            _changeTicketInputValidator = changeTicketInputValidator;
+            _addTicketInputValidator = addTicketInputValidator;
         }
         [HttpPut]
-        public IActionResult Ticket([FromRoute] int id, [FromBody] Ticket input)
+        public IActionResult Ticket([FromRoute] int id, [FromBody] AddTicketInput input)
         {
                 
-            var validationResult = _changeTicketInputValidator.Validate(input);
+            var validationResult = _addTicketInputValidator.Validate(input);
 
             if(!validationResult.IsValid) 
             {
                 return BadRequest(validationResult.Errors.ToCustomValidatorFailure());
             }
 
-            _changeTicketUseCase.ChangeTicket(id, input);
-            return Created("", input);
+            var ticketToChange = new Ticket(input.Origin, input.Destination, input.Price, input.TravelDate);
+
+            _changeTicketUseCase.ChangeTicket(id, ticketToChange);
+
+            return Created("", ticketToChange);
         }
     }
 }

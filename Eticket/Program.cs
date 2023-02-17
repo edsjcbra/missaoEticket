@@ -45,8 +45,7 @@ namespace Eticket
             builder.Services.AddScoped<IChangeTicketRepository, ChangeTicketRepository>();
             builder.Services.AddScoped<IChangeTicketUseCase, ChangeTicketUseCase>();
             builder.Services.AddTransient<IValidator<AddTicketInput>, AddTicketInputValidator>();
-            builder.Services.AddTransient<IValidator<Ticket>, ChangeTicketInputValidator>();
-
+            
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
