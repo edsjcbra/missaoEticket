@@ -15,6 +15,11 @@ namespace Application.UseCases.ChangeTicket
 
         public void ChangeTicket(int id, Ticket ticket)
         {
+            if (id <= 0)
+            {
+                throw new ArgumentException("Id should be greather than zero", nameof(id));
+            }
+
             _iChangeTicketrepository.ChangeTicket(id, ticket);
         }
     }
