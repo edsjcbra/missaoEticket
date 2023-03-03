@@ -10,11 +10,12 @@ namespace Infra.Repository.Repositories.ChangeTicket
 
         public ChangeTicketRepository(EticketDbContext dbContext)
         {
-            _dbContext= dbContext;
+            _dbContext = dbContext;
         }
 
         public void ChangeTicket(int id, Ticket newTicket)
         {
+            _dbContext.Update(newTicket);
             var ticketToChange = _dbContext.Tickets.FirstOrDefault(t => t.Id == id);
             if (ticketToChange != null)
             {
